@@ -4,14 +4,14 @@
     font-family: 'Geo';
     font-style: normal;
     font-weight: 400;
-    src: url('geo.woff2') format('woff2')
+    src: url('/assets/fonts/geo.woff2') format('woff2')
 }
 
 @font-face {
     font-family: 'Source Code Pro';
     font-style: normal;
     font-weight: 400;
-    src: url('scp.woff2') format('woff2')
+    src: url('/assets/fonts/scp.woff2') format('woff2')
 }
 
 body {
