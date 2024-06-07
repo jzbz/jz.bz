@@ -33,7 +33,7 @@ h1 {
 }
 
 a {
-    color: #A9A9B3;
+    color: inherit;
     background-color: transparent;
     text-decoration:none;
     transition:color 1.5s ease-in;
