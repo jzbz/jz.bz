@@ -96,6 +96,12 @@ a:hover {
     animation: cursor 1s infinite
 }
 
+.icon {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.125em;
+}
+
 @keyframes cursor {
     0% {
         opacity: 0
@@ -109,4 +115,3 @@ a:hover {
         opacity: 0
     }
 }
-
