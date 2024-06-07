@@ -96,21 +96,14 @@ a:hover {
     animation: cursor 1s infinite
 }
 
-.icon {
-    width: 32px;
-    height: 32px;
+@keyframes cursor {
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
 }
 
-@keyframes cursor {
-    0% {
-        opacity: 0
-    }
-
-    50% {
-        opacity: 1
-    }
-
-    100% {
-        opacity: 0
-    }
+.icon {
+    width: 25px;
+    height: 25px;
+    padding: 0 0 0 15px
 }
