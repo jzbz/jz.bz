@@ -33,7 +33,7 @@ h1 {
 }
 
 a {
-    color: inherit;
+    color: #A9A9B3;
     background-color: transparent;
     text-decoration:none;
     transition:color 1.5s ease-in;
@@ -97,9 +97,8 @@ a:hover {
 }
 
 .icon {
-    color: #A9A9B3;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
 @keyframes cursor {
