@@ -4,14 +4,14 @@
     font-family: 'Geo';
     font-style: normal;
     font-weight: 400;
-    src: url('/assets/fonts/geo.woff2') format('woff2')
+    src: url('/assets/fonts/geo.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Source Code Pro';
     font-style: normal;
     font-weight: 400;
-    src: url('/assets/fonts/scp.woff2') format('woff2')
+    src: url('/assets/fonts/scp.woff2') format('woff2');
 }
 
 body {
@@ -23,13 +23,13 @@ body {
     color: #A9A9B3;
     display: flex;
     min-height: 100vh;
-    flex-direction: column
+    flex-direction: column;
 }
 
 h1 {
     font-family: 'Geo';
     font-size: 3em;
-    margin: 0.5em 0
+    margin: 0.5em 0;
 }
 
 a {
@@ -60,12 +60,12 @@ a:hover {
     flex: 1 auto;
     align-items: top;
     justify-content: stretch;
-    margin: 300px 0
+    margin: 300px 0;
 }
 
 .header {
     background: #252627;
-    padding: 18px
+    padding: 18px;
 }
 
 .header_inner {
@@ -74,7 +74,7 @@ a:hover {
     justify-content: space-between;
     margin: 0 auto;
     width: 760px;
-    max-width: 100%
+    max-width: 100%;
 }
 
 .logo {
@@ -83,7 +83,7 @@ a:hover {
     text-decoration: none;
     font-weight: 700;
     font-family: 'Source Code Pro';
-    font-size: 1.25rem
+    font-size: 1.25rem;
 }
 
 .logo_cursor {
@@ -93,7 +93,7 @@ a:hover {
     background: #DEFF85;
     margin-left: 5px;
     border-radius: 1px;
-    animation: cursor 1s infinite
+    animation: cursor 1s infinite;
 }
 
 @keyframes cursor {
@@ -105,5 +105,5 @@ a:hover {
 .icon {
     width: 25px;
     height: 25px;
-    padding: 0 0 0 15px
+    padding: 0 0 0 15px;
 }
