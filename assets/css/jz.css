@@ -1,11 +1,14 @@
 /* jz */
 
 /* Global Styles */
-
 :root {
   --primary-color: #A9A9B3;
   --background-color: #292A2D;
   --highlight-color: #DEFF85;
+  --font-size-base: 1rem;
+  --line-height-base: 1.54;
+  --font-size-header: 3em;
+  --margin-base: 18px;
 }
 
 * {
@@ -15,8 +18,8 @@
 }
 
 body {
-  font-size: 1rem;
-  line-height: 1.54;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   background-color: var(--background-color);
   color: var(--primary-color);
   display: flex;
@@ -25,7 +28,6 @@ body {
 }
 
 /* Font Faces */
-
 @font-face {
   font-family: 'Geo';
   font-style: normal;
@@ -41,19 +43,18 @@ body {
 }
 
 /* Header Styles */
-
 .header {
   background: #252627;
-  padding: 18px;
+  padding: var(--margin-base);
 }
 
-.header_inner {
+.header_inner {/* jz */
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
   width: 760px;
-  max-width: 100%;
+  max-width: calc(760px - 2*var(--margin-base));
 }
 
 .logo {
@@ -76,19 +77,12 @@ body {
 }
 
 @keyframes cursor {
-  0% {
-    opacity: 0
-  }
-  50% {
-    opacity: 1
-  }
-  100% {
-    opacity: 0
-  }
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
 }
 
 /* Content Styles */
-
 .content {
   display: flex;
   flex-direction: column;
@@ -105,7 +99,7 @@ body {
 
 h1 {
   font-family: 'Geo';
-  font-size: 3em;
+  font-size: var(--font-size-header);
   margin: 0.5em 0;
 }
 
@@ -121,13 +115,13 @@ a:hover {
   text-decoration: none;
 }
 
-::selection {
+> ::selection {
   color: #000;
   background: var(--highlight-color);
 }
 
 .icon {
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   padding: 0 0 0 15px;
 }
