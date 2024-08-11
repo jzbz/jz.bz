@@ -1,109 +1,133 @@
 /* jz */
 
-@font-face {
-    font-family: 'Geo';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/assets/fonts/geo.woff2') format('woff2');
+/* Global Styles */
+
+:root {
+  --primary-color: #A9A9B3;
+  --background-color: #292A2D;
+  --highlight-color: #DEFF85;
 }
 
-@font-face {
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/assets/fonts/scp.woff2') format('woff2');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    line-height: 1.54;
-    background-color: #292A2D;
-    color: #A9A9B3;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  font-size: 1rem;
+  line-height: 1.54;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-h1 {
-    font-family: 'Geo';
-    font-size: 3em;
-    margin: 0.5em 0;
+/* Font Faces */
+
+@font-face {
+  font-family: 'Geo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/geo.woff2') format('woff2');
 }
 
-a {
-    color: inherit;
-    background-color: transparent;
-    text-decoration:none;
-    transition:color 1.5s ease-in;
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/scp.woff2') format('woff2');
 }
 
-a:hover {
-    color:#A6E22E;
-    text-decoration:none;
-}
-
-::selection {
-    color:#000;
-    background:#DEFF85;
-}
-
-.container {
-    justify-content: center;
-    text-align: center;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    flex: 1 auto;
-    align-items: top;
-    justify-content: stretch;
-    margin: 300px 0;
-}
+/* Header Styles */
 
 .header {
-    background: #252627;
-    padding: 18px;
+  background: #252627;
+  padding: 18px;
 }
 
 .header_inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 760px;
-    max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 760px;
+  max-width: 100%;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: 700;
-    font-family: 'Source Code Pro';
-    font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Source Code Pro';
+  font-size: 1.25rem;
 }
 
 .logo_cursor {
-    display: inline-block;
-    width: 10px;
-    height: 1rem;
-    background: #DEFF85;
-    margin-left: 5px;
-    border-radius: 1px;
-    animation: cursor 1s infinite;
+  display: inline-block;
+  width: 10px;
+  height: 1rem;
+  background: var(--highlight-color);
+  margin-left: 5px;
+  border-radius: 1px;
+  animation: cursor 1s infinite;
 }
 
 @keyframes cursor {
-    0% {opacity: 0}
-    50% {opacity: 1}
-    100% {opacity: 0}
+  0% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+/* Content Styles */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  align-items: top;
+  justify-content: stretch;
+  margin: 300px 0;
+}
+
+.container {
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Geo';
+  font-size: 3em;
+  margin: 0.5em 0;
+}
+
+a {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+  transition: color 1.5s ease-in;
+}
+
+a:hover {
+  color: #A6E22E;
+  text-decoration: none;
+}
+
+::selection {
+  color: #000;
+  background: var(--highlight-color);
 }
 
 .icon {
-    width: 25px;
-    height: 25px;
-    padding: 0 0 0 15px;
+  width: 25px;
+  height: 25px;
+  padding: 0 0 0 15px;
 }
