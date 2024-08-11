@@ -115,12 +115,12 @@ a:hover {
   text-decoration: none;
 }
 
-::selection {
+*::selection {
   color: #000;
   background: var(--highlight-color);
 }
 
-::-moz-selection {
+*::-moz-selection {
   color: #000;
   background: var(--highlight-color);
 }
