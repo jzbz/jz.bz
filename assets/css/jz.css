@@ -115,7 +115,7 @@ a:hover {
   text-decoration: none;
 }
 
-> ::selection {
+::selection {
   color: #000;
   background: var(--highlight-color);
 }
