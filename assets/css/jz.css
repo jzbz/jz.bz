@@ -1,3 +1,6 @@
+/* jz */
+
+/* Global Styles */
 :root {
   --primary-color: #A9A9B3;
   --background-color: #292A2D;
@@ -6,6 +9,12 @@
   --line-height-base: 1.54;
   --font-size-header: 3em;
   --margin-base: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -33,19 +42,19 @@ body {
   src: url('/assets/fonts/scp.woff2') format('woff2');
 }
 
-/* Site Header Styles */
-.site-header {
+/* Header Styles */
+.header {
   background: #252627;
   padding: var(--margin-base);
 }
 
-.site-header-inner {
+.header_inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
   width: 760px;
-  max-width: calc(760px - 2 * var(--margin-base));
+  max-width: calc(760px - 2*var(--margin-base));
 }
 
 .logo {
@@ -57,7 +66,7 @@ body {
   font-size: 1.25rem;
 }
 
-.cursor-animation {
+.logo_cursor {
   display: inline-block;
   width: 10px;
   height: 1rem;
@@ -68,22 +77,24 @@ body {
 }
 
 @keyframes cursor {
-  0% { opacity: 0 }
-  50% { opacity: 1 }
-  100% { opacity: 0 }
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
 }
 
-/* Site Content Styles */
-.site-container {
+/* Content Styles */
+.content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex: 1 auto;
+  align-items: top;
+  justify-content: stretch;
+  margin: 300px 0;
 }
 
-.site-content {
-  margin-top: 300px;
+.container {
+  justify-content: center;
+  text-align: center;
 }
 
 h1 {
@@ -92,23 +103,21 @@ h1 {
   margin: 0.5em 0;
 }
 
-.social-links {
-  margin-top: 1em;
-}
-
 a {
   color: inherit;
   font-family: 'Source Code Pro';
   font-weight: 700;
+  background-color: transparent;
   text-decoration: none;
   transition: color 1.5s ease-in;
 }
 
 a:hover {
   color: #A6E22E;
+  text-decoration: none;
 }
 
-::selection {
+*::selection {
   color: #000;
   background: var(--highlight-color);
 }
