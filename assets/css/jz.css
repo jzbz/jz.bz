@@ -1,110 +1,127 @@
 /* jz */
 
-/* Global */
+/* Global Styles */
 :root {
-    --primary-color: #A9A9B3;
-    --background-color: #292A2D;
-    --highlight-color: #DEFF85;
-    --font-size-base: 1rem;
-    --font-size-header: 3em;
-    --margin-base: 18px;
+  --primary-color: #A9A9B3;
+  --background-color: #292A2D;
+  --highlight-color: #DEFF85;
+  --font-size-base: 1rem;
+  --line-height-base: 1.54;
+  --font-size-header: 3em;
+  --margin-base: 18px;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font: var(--font-size-base)/1.54 'Source Code Pro', monospace;
-    background: var(--background-color);
-    color: var(--primary-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-/* Fonts */
+/* Font Faces */
 @font-face {
-    font-family: 'Geo';
-    src: url('/assets/fonts/geo.woff2') format('woff2');
-    font-display: swap;
+  font-family: 'Geo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/geo.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Source Code Pro';
-    src: url('/assets/fonts/scp.woff2') format('woff2');
-    font-display: swap;
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/scp.woff2') format('woff2');
 }
 
-/* Header */
+/* Header Styles */
 .header {
-    background: #252627;
-    padding: var(--margin-base);
+  background: #252627;
+  padding: var(--margin-base);
 }
 
 .header_inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: min(760px, 100% - var(--margin-base) * 2);
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 760px;
+  max-width: calc(760px - 2*var(--margin-base));
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font: 700 1.25rem 'Source Code Pro';
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Source Code Pro';
+  font-size: 1.25rem;
 }
 
 .logo_cursor {
-    width: 10px;
-    height: 1rem;
-    background: var(--highlight-color);
-    border-radius: 1px;
-    animation: cursor 1s infinite;
+  display: inline-block;
+  width: 10px;
+  height: 1rem;
+  background: var(--highlight-color);
+  margin-left: 5px;
+  border-radius: 1px;
+  animation: cursor 1s infinite;
 }
 
-/* Content */
+@keyframes cursor {
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
+}
+
+/* Content Styles */
 .content {
-    flex: 1;
-    margin: 300px 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  align-items: top;
+  justify-content: stretch;
+  margin: 300px 0;
 }
 
 .container {
-    text-align: center;
+  justify-content: center;
+  text-align: center;
 }
 
 h1 {
-    font-family: 'Geo';
-    font-size: var(--font-size-header);
-    margin: 0.5em 0;
+  font-family: 'Geo';
+  font-size: var(--font-size-header);
+  margin: 0.5em 0;
 }
 
 a {
-    color: inherit;
-    transition: color 0.3s ease;
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+  transition: color 1.5s ease-in;
 }
 
 a:hover {
-    color: #A6E22E;
+  color: #A6E22E;
+  text-decoration: none;
 }
 
-::selection {
-    color: #000;
-    background: var(--highlight-color);
+*::selection {
+  color: #000;
+  background: var(--highlight-color);
 }
 
 .icon {
-    width: 38px;
-    height: 38px;
-    padding-inline-start: 15px;
-}
-
-/* Animations */
-@keyframes cursor {
-    0%, 100% { opacity: 0 }
-    50% { opacity: 1 }
+  width: 38px;
+  height: 38px;
+  padding: 0 0 0 15px;
 }
