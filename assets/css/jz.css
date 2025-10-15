@@ -219,17 +219,6 @@ h1 {
   text-shadow: 0 0 30px rgba(222, 255, 133, 0.3);
 }
 
-h1::selection {
-  background: var(--highlight-color) !important;
-  -webkit-text-fill-color: #000 !important;
-  color: #000 !important;
-}
-
-h1::-moz-selection {
-  background: var(--highlight-color) !important;
-  color: #000 !important;
-}
-
 @keyframes gradientText {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -286,21 +275,21 @@ a {
   right: 0;
   bottom: 0;
   border-radius: 4px;
-  background: linear-gradient(45deg, var(--highlight-color), var(--accent-color));
+  background: transparent;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
 }
 
 .link-hover:hover {
-  color: #000;
+  color: var(--accent-color);
   border-color: var(--accent-color);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 10px 30px rgba(166, 226, 46, 0.3);
 }
 
 .link-hover:hover::before {
-  opacity: 1;
+  opacity: 0;
 }
 
 .link-hover:hover .icon {
@@ -317,7 +306,8 @@ a {
   background: var(--highlight-color);
 }
 
-*::-moz-selection {
+h1::selection {
+  -webkit-text-fill-color: #000;
   color: #000;
   background: var(--highlight-color);
 }
