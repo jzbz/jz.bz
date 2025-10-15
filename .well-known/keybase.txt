@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jz_bz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jz.bz
+  * I am jz_bz (https://keybase.io/jz_bz) on keybase.
+  * I have a public key ASChXL4BUYsrXRisalh1orh4YYxWQ_vTse4mH4AVpMYWVQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010121ceb8caed7a12c761404d4d0bd815b0422fe026e2c6670065bf03324cda2f160a",
+      "host": "keybase.io",
+      "kid": "0120a15cbe01518b2b5d18ac6a5875a2b878618c5643fbd3b1ee261f8015a4c616550a",
+      "uid": "c5a37f071f00961852589c46c005dd19",
+      "username": "jz_bz"
+    },
+    "merkle_root": {
+      "ctime": 1692485850,
+      "hash": "54fb2b7ad5d28e8855d5315c0155ced98ffebaa9234f330d833b60f1f5bf27d39e666aa04792d9e7c25aff9f5a4639a7d0f1a8cdb8329341fbff12af4338a362",
+      "hash_meta": "5f55aacb1feebad949fe66a06c9c74540a4f74c3347e6f2a6906f81e14d15e43",
+      "seqno": 24828476
+    },
+    "service": {
+      "entropy": "vF2mJb7w36zPGnVlsAI2o5AP",
+      "hostname": "jz.bz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.2"
+  },
+  "ctime": 1692485958,
+  "expire_in": 504576000,
+  "prev": "8e508fedc9e35c6bc9a8ee7f06a7b9ad353d9a40eb6e7e1041cf87e2503652ed",
+  "seqno": 140,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgoVy+AVGLK10YrGpYdaK4eGGMVkP707HuJh+AFaTGFlUKp3BheWxvYWTES5cCzIzEII5Qj+3J41xryajufwanua01PZpA625+EEHPh+JQNlLtxCCUet6nbF4VIHC0I33bRxy6sY73Ren4QCLbcYocFOxtyAIBwqNzaWfEQGm5r4pXnRhi4mzZfI3z3apvegQCD1FBJMe346sB6ovfn+1CAbE6cq1iK8C2w6E5jrRh2OhJDEZZ9BSK5LnrCAuoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCB2P+2TVQ05+j0it4GjLO9FtXAqNCEN+NJtWcAEu6/zEKN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jz_bz
+
+==================================================================

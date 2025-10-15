@@ -1,0 +1,118 @@
+/* jz */
+
+/* Global Styles */
+:root {
+    --primary-color: #A9A9B3;
+    --background-color: #292A2D;
+    --highlight-color: #DEFF85;
+    --font-size-base: 1rem;
+    --line-height-base: 1.54;
+    --font-size-header: 3em;
+    --margin-base: 18px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: var(--font-size-base)/var(--line-height-base) sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Font Faces */
+@font-face {
+    font-family: 'Geo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/geo.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/scp.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* Header Styles */
+.header {
+    background: var(--background-color);
+    padding: var(--margin-base);
+}
+
+.header_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 760px;
+    padding: 0 var(--margin-base);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font: 700 1.25rem 'Source Code Pro', monospace;
+    text-decoration: none;
+}
+
+.logo_cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1rem;
+    background: var(--highlight-color);
+    margin-left: 5px;
+    border-radius: 1px;
+    animation: cursor 1s infinite steps(2, start);
+}
+
+@keyframes cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Content Styles */
+.content {
+    flex: 1;
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font: var(--font-size-header) 'Geo', sans-serif;
+    margin: 0.5em 0;
+}
+
+a {
+    color: inherit;
+    font: 700 1rem 'Source Code Pro', monospace;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease-in;
+}
+
+a:hover {
+    color: #A6E22E;
+}
+
+*::selection {
+    color: #000;
+    background: var(--highlight-color);
+}

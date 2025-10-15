@@ -1,0 +1,340 @@
+/* jz */
+
+/* Global Styles */
+:root {
+  --primary-color: #A9A9B3;
+  --background-color: #292A2D;
+  --highlight-color: #DEFF85;
+  --accent-color: #A6E22E;
+  --font-size-base: 1rem;
+  --line-height-base: 1.54;
+  --font-size-header: 3em;
+  --margin-base: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  background: linear-gradient(135deg, #1a1b1e 0%, #292A2D 50%, #1e2024 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--primary-color);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Particle Canvas */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Font Faces */
+@font-face {
+  font-family: 'Geo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/geo.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/scp.woff2') format('woff2');
+}
+
+/* Header Styles */
+.header {
+  background: rgba(37, 38, 39, 0.8);
+  backdrop-filter: blur(10px);
+  padding: var(--margin-base);
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 760px;
+  max-width: calc(760px - 2*var(--margin-base));
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Source Code Pro';
+  font-size: 1.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  text-shadow: -2px 0 #ff00de;
+  top: 0;
+  color: var(--primary-color);
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+  opacity: 0;
+}
+
+.logo:hover::before {
+  opacity: 0.8;
+}
+
+.logo::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  text-shadow: 2px 0 #00fff9;
+  top: 0;
+  color: var(--primary-color);
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+  opacity: 0;
+}
+
+.logo:hover::after {
+  opacity: 0.8;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(42px, 9999px, 44px, 0); }
+  5% { clip: rect(12px, 9999px, 59px, 0); }
+  10% { clip: rect(48px, 9999px, 29px, 0); }
+  15% { clip: rect(42px, 9999px, 73px, 0); }
+  20% { clip: rect(63px, 9999px, 27px, 0); }
+  25% { clip: rect(34px, 9999px, 55px, 0); }
+  30% { clip: rect(86px, 9999px, 73px, 0); }
+  35% { clip: rect(20px, 9999px, 20px, 0); }
+  40% { clip: rect(26px, 9999px, 60px, 0); }
+  45% { clip: rect(25px, 9999px, 66px, 0); }
+  50% { clip: rect(57px, 9999px, 98px, 0); }
+  55% { clip: rect(5px, 9999px, 46px, 0); }
+  60% { clip: rect(82px, 9999px, 31px, 0); }
+  65% { clip: rect(54px, 9999px, 27px, 0); }
+  70% { clip: rect(28px, 9999px, 99px, 0); }
+  75% { clip: rect(45px, 9999px, 69px, 0); }
+  80% { clip: rect(23px, 9999px, 85px, 0); }
+  85% { clip: rect(54px, 9999px, 84px, 0); }
+  90% { clip: rect(45px, 9999px, 47px, 0); }
+  95% { clip: rect(37px, 9999px, 20px, 0); }
+  100% { clip: rect(4px, 9999px, 91px, 0); }
+}
+
+.logo_cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1rem;
+  background: var(--highlight-color);
+  margin-left: 5px;
+  border-radius: 1px;
+  animation: cursor 1s infinite;
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+
+@keyframes cursor {
+    0% {opacity: 0}
+    50% {opacity: 1}
+    100% {opacity: 0}
+}
+
+/* Content Styles */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  align-items: top;
+  justify-content: stretch;
+  margin: 300px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-family: 'Geo';
+  font-size: var(--font-size-header);
+  margin: 0.5em 0;
+  background: linear-gradient(45deg, var(--primary-color), var(--highlight-color), var(--accent-color));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 5s ease infinite;
+  text-shadow: 0 0 30px rgba(222, 255, 133, 0.3);
+}
+
+h1::selection {
+  background: var(--highlight-color) !important;
+  -webkit-text-fill-color: #000 !important;
+  color: #000 !important;
+}
+
+h1::-moz-selection {
+  background: var(--highlight-color) !important;
+  color: #000 !important;
+}
+
+@keyframes gradientText {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+a {
+  color: inherit;
+  font-family: 'Source Code Pro';
+  font-weight: 700;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.link-hover {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: rgba(169, 169, 179, 0.05);
+  backdrop-filter: blur(5px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.link-hover .icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.link-hover span {
+  font-family: 'Source Code Pro';
+  font-weight: 700;
+}
+
+.link-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  background: linear-gradient(45deg, var(--highlight-color), var(--accent-color));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.link-hover:hover {
+  color: #000;
+  border-color: var(--accent-color);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(166, 226, 46, 0.3);
+}
+
+.link-hover:hover::before {
+  opacity: 1;
+}
+
+.link-hover:hover .icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 8px var(--accent-color));
+}
+
+.link-hover:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+*::selection {
+  color: #000;
+  background: var(--highlight-color);
+}
+
+*::-moz-selection {
+  color: #000;
+  background: var(--highlight-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .link-hover {
+    width: 80%;
+    max-width: 300px;
+  }
+}
