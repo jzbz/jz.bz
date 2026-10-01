@@ -167,12 +167,6 @@ class ParticleSystem {
         this.drawFrame();
         requestAnimationFrame(() => this.animate());
     }
-
-    toggle() {
-        this.running = !this.running;
-        this.canvas.style.display = this.running ? '' : 'none';
-        if (this.running && !this.reducedMotion) this.animate();
-    }
 }
 
 // 3D tilt on hover
@@ -209,14 +203,6 @@ class LinkEnhancer {
 
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    const particleSystem = new ParticleSystem(document.getElementById('particles'));
+    new ParticleSystem(document.getElementById('particles'));
     new LinkEnhancer();
-
-    // Ctrl+P toggles the particle background
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'p' && e.ctrlKey) {
-            e.preventDefault();
-            particleSystem.toggle();
-        }
-    });
 });
