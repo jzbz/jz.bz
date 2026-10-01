@@ -21,16 +21,36 @@
 body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  background: linear-gradient(135deg, #1a1b1e 0%, #292A2D 50%, #1e2024 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background-color: #292A2D;
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
   overflow-x: hidden;
+
+  /* The animated gradient lives on this fixed, oversized layer so it can
+     move with transform (compositor-only) instead of background-position,
+     which repainted the full viewport every frame. Size and offsets mirror
+     the old background-size: 400% / position 0% 50% -> 100% 50% exactly. */
+  &::before {
+    content: '';
+    position: fixed;
+    top: -150%;
+    left: 0;
+    width: 400%;
+    height: 400%;
+    z-index: -1;
+    background: linear-gradient(135deg, #1a1b1e 0%, #292A2D 50%, #1e2024 100%);
+    animation: gradientPan 15s ease infinite;
+  }
 }
 
+@keyframes gradientPan {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-75%); }
+}
+
+/* Still used by h1; the repaint area there is tiny */
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
